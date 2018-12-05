@@ -12,24 +12,12 @@
 </head>
 <body>
 <div id="chat-container">
-    <div class="chat-header">
-        <div class="user-container">
-            <span id="username" th:utext="${username}"></span>
-            <a th:href="@{/logout}">Выйти</a>
-        </div>
-        <h3>The Biber Project</h3>
-    </div>
 
-    <hr/>
-    <ul id="messageArea">
-    </ul>
-    <form id="messageForm" name="messageForm">
-        <div class="input-message">
-            <input type="text" id="message" autocomplete="off"
-                   placeholder="Введите сообщение..."/>
-            <button type="submit">Отправить</button>
-        </div>
-    </form>
+    <div class="user-container">
+        <span id="username" th:utext="${username}"></span>
+        <a th:href="@{/logout}">Выйти</a>
+    </div>
+    <h3>The Biber Project</h3>
 <br>
     <div>
         <h2>Онлайн:</h2>
