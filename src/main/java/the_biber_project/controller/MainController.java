@@ -7,9 +7,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import the_biber_project.User;
+import the_biber_project.repos.MemRepInMemoryMessageRepository;
+//import org.springframework.in
 
 @Controller
 public class MainController {
+
+    MemRepInMemoryMessageRepository usrs = new MemRepInMemoryMessageRepository();
+
+
 
     @RequestMapping("/")
     public String index(HttpServletRequest request, Model model) {
@@ -20,7 +27,13 @@ public class MainController {
         }
 
         model.addAttribute("username", username);
+        User s = new User();
+        s.setUserName(username);
+        usrs.save(s);
 
+        model.addAttribute("users", usrs.usersStr);
+
+        System.out.println(usrs.findAll().toString());
 
 
         return "chat";

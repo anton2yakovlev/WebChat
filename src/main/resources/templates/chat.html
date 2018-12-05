@@ -30,6 +30,13 @@
             <button type="submit">Отправить</button>
         </div>
     </form>
+<br>
+    <div>
+        <h2>Онлайн:</h2>
+        <ul>
+            <li th:each="item : ${users}" th:text="${item}">Item description here...</li>
+        </ul>
+    </div>
 </div>
 
 
