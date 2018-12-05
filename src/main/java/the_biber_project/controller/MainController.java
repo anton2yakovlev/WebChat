@@ -18,7 +18,10 @@ public class MainController {
         if (username == null || username.isEmpty()) {
             return "redirect:/login";
         }
+
         model.addAttribute("username", username);
+
+
 
         return "chat";
     }
@@ -37,12 +40,15 @@ public class MainController {
         }
         request.getSession().setAttribute("username", username);
 
+
+
         return "redirect:/";
     }
 
     @RequestMapping(path = "/logout")
     public String logout(HttpServletRequest request) {
         request.getSession(true).invalidate();
+
 
         return "redirect:/login";
     }
